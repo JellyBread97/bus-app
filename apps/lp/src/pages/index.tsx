@@ -1,102 +1,102 @@
 import React from "react"
-import tw from "tailwind-styled-components"
-import { Layout, Seo } from "../components"
+import { Layout, Seo } from "components"
+import { HeroSection, MidSection } from "sections"
+import { GiSlashedShield } from "@react-icons/all-files/gi/GiSlashedShield"
+import { GiAlarmClock } from "@react-icons/all-files/gi/GiAlarmClock"
+import { GiMoneyStack } from "@react-icons/all-files/gi/GiMoneyStack"
+import { BiNetworkChart } from "@react-icons/all-files/bi/BiNetworkChart"
+import { FaLeaf } from "@react-icons/all-files/fa/FaLeaf"
 
-const Title = tw.span`text-5xl text-green-500 uppercase font-bold`
-const Caption = tw.span`text-3xl text-gray-900 uppercase font-bold`
-const Description = tw.h1`text-2xl text-gray-500`
-const MainImage = tw.img`rounded-3xl shadow-lg`
-
-const Section = tw.div`max-w-screen-2xl mx-auto relative`
-const Separator = tw.div`w-10 h-1 bg-blue-500`
-
-const Button = tw.button`bg-green-500 px-5 py-3 rounded-xl text-white font-bold uppercase`
-const Gradient = tw.div`absolute inset-0 bg-gradient-radial-hero`
-const BookingFormDummyDiv = tw.div`bg-white h-24 w-2/3 rounded-3xl shadow-xl`
-
-const heroFeatures = [
-  {
-    title: "Book Easy",
-    description: "Tickets with QR Code",
+const sections = {
+  features: {
+    title: "A Better Way To Travel",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!",
+    featuresTitle: "Features",
+    imageUrl: "https://source.unsplash.com/eGA5dZG4sCw",
+    imageAlt: "Bus",
+    direction: "left",
+    features: [
+      {
+        title: "Safety",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!",
+        icon: GiSlashedShield,
+      },
+      {
+        title: "Reliability",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!",
+        icon: GiAlarmClock,
+      },
+      {
+        title: "Affordable",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!",
+        icon: GiMoneyStack,
+      },
+      {
+        title: "Environmentally Friendly",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!",
+        icon: FaLeaf,
+      },
+      {
+        title: "Biggest Network in Europe",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!",
+        icon: BiNetworkChart,
+      },
+    ],
   },
-  {
-    title: "Discounts",
-    description: "For those who create an account",
+  features2: {
+    title: "A Better Way To Travel",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!",
+    featuresTitle: "Features",
+    imageUrl: "https://source.unsplash.com/eGA5dZG4sCw",
+    imageAlt: "Bus",
+    features: [
+      {
+        title: "Safety",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!",
+        icon: GiSlashedShield,
+      },
+      {
+        title: "Reliability",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!",
+        icon: GiAlarmClock,
+      },
+      {
+        title: "Affordable",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!",
+        icon: GiMoneyStack,
+      },
+      {
+        title: "Environmentally Friendly",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!",
+        icon: FaLeaf,
+      },
+      {
+        title: "Biggest Network in Europe",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!",
+        icon: BiNetworkChart,
+      },
+    ],
   },
-  {
-    title: "30+",
-    description: "Cities around the Europe",
-  },
-]
-
-const HeroFeatureItem = ({ item }) => (
-  <div>
-    <h5 className="font-bold">{item.title}</h5>
-    <p>{item.description}</p>
-  </div>
-)
-
-const HeroFeatures = () => (
-  <div className="flex gap-4">
-    {heroFeatures.map(item => (
-      <HeroFeatureItem item={item} />
-    ))}
-  </div>
-)
-
-const LogoTitle = () => (
-  <div>
-    <Caption>{"The Private"}</Caption>
-    <div className="mt-1">
-      <Title className="text-blue-500">{"Bus"}</Title>
-      <Title className="ml-3 text-green-500">{"Company"}</Title>
-    </div>
-    <Separator className="mt-4" />
-  </div>
-)
-
-const TextSection = () => (
-  <div>
-    <div className="space-y-4">
-      <LogoTitle />
-      <Description>
-        {
-          "This is a private bus company that takes you from point A to point B within continental Europe."
-        }
-      </Description>
-      <Button>{"Create Account"}</Button>
-    </div>
-    <div className="mt-32">
-      <HeroFeatures />
-    </div>
-  </div>
-)
-
-const GradientBackground = () => (
-  <div className="absolute left-0 right-0 top-0 h-[900px]">
-    <Gradient />
-  </div>
-)
-
-const BookingForm = () => (
-  <div className="mt-16 flex justify-center">
-    <BookingFormDummyDiv />
-  </div>
-)
+}
 
 const IndexPage = () => (
   <Layout>
     <Seo title="Home" lang={""} meta={[]} />
-    <GradientBackground />
-    <Section>
-      <BookingForm />
-      <div className="mt-16 flex justify-between items-center gap-x-8">
-        <TextSection />
-        <div>
-          <MainImage src="https://source.unsplash.com/T5jzpRTVF1U" alt="Bus" />
-        </div>
-      </div>
-    </Section>
+    <HeroSection />
+    <MidSection section={sections.features} />
+    <MidSection section={sections.features2} />
   </Layout>
 )
 

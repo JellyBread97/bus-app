@@ -1,6 +1,6 @@
 import * as React from "react"
 
-import { Layout, Seo } from "../components"
+import { Layout, Seo } from "components"
 
 const NotFoundPage = () => (
   <Layout>
@@ -9,8 +9,6 @@ const NotFoundPage = () => (
   </Layout>
 )
 
-export const Head = () => (
-  <Seo title="404: Not Found" description={undefined} children={undefined} />
-)
+export const Head = () => <Seo title="404: Not Found" lang={""} meta={[]} />
 
 export default NotFoundPage

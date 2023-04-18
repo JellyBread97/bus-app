@@ -16,11 +16,11 @@ import {
   Menu,
   MenuContainer,
   OptionContainer,
-  SearchButton,
   SwapButton,
 } from "./components"
 import { GuestOptionComponent, InputComponent } from "./complex-components"
 import { formSchema } from "./form-schema"
+import { Button } from "components"
 
 export const BookingForm = () => {
   const form = useReactBookingForm({ formSchema })
@@ -104,7 +104,9 @@ export const BookingForm = () => {
         />
       </InputContainer>
       <InputContainer>
-        <SearchButton onClick={onBookButtonClick}>{"Search"}</SearchButton>
+        <Button className="w-full py-5" onClick={onBookButtonClick}>
+          {"Search"}
+        </Button>
       </InputContainer>
     </Container>
   )

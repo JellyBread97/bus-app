@@ -2,6 +2,7 @@ import React from "react"
 import tw from "tailwind-styled-components"
 import { Section, Text, Button } from "components"
 import { HeroFeatures } from "./hero-features"
+import { BookingForm } from "./booking-form"
 
 const MainImage = tw.img`rounded-3xl shadow-lg`
 
@@ -44,12 +45,6 @@ const GradientBackground = () => (
   </div>
 )
 
-const BookingForm = () => (
-  <div className="mt-16 flex justify-center">
-    <BookingFormDummyDiv />
-  </div>
-)
-
 const Container = tw.div`mt-16 flex justify-between items-center gap-x-8`
 const Column = tw.div`w-1/2`
 
@@ -57,7 +52,9 @@ export const HeroSection = () => (
   <>
     <GradientBackground />
     <Section className="h-[900px]">
-      <BookingForm />
+      <div className="mt-16 flex justify-center">
+        <BookingForm />
+      </div>
       <Container>
         <Column>
           <TextSection />

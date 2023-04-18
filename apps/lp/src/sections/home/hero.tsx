@@ -3,35 +3,50 @@ import tw from "tailwind-styled-components"
 import { Section, Text, Button } from "components"
 import { HeroFeatures } from "./hero-features"
 import { BookingForm } from "./booking-form"
+import { InView } from "react-cool-inview"
 
-const MainImage = tw.img`rounded-3xl shadow-lg`
-const Separator = tw.div`w-10 h-1 bg-blue-500`
+const Container = tw.div`mt-16 flex justify-between items-center gap-x-8`
+const Column = tw.div`w-1/2`
+const Separator = tw.div`w-12 h-1 bg-blue-500 mt-4 transform transition duration-1000 origin-left delay-[1500ms]`
 const Gradient = tw.div`absolute inset-0 bg-gradient-radial-hero`
+const SmallHeadingText = tw(Text)`delay-500 duration-1000 ease-in-out`
+const BigHeadingText = tw(Text)`mt-1 delay-1000 duration-1000 ease-in-out`
+const DescriptionText = tw(
+  Text
+)`mt-1 delay-1000 duration-[2000ms] ease-in-out delay-[1500ms] w-2/3`
+const ButtonContainer = tw.div`delay-[1500ms] transition duration-[2000ms] mt-8`
 
-export const LogoTitle = () => (
+export const LogoTitle = ({ inView }) => (
   <div>
-    <Text variant={"h5"}>{"The Private"}</Text>
-    <Text variant={"h3"} className="mt-1">
+    <SmallHeadingText variant={"h5"} className={`${inView ? "" : "opacity-0"}`}>
+      {"The Private"}
+    </SmallHeadingText>
+    <BigHeadingText variant={"h3"} className={`${inView ? "" : "opacity-0"}`}>
       <span className="text-blue-500">{"Bus"}</span>
       <span className="ml-3 text-green-500">{"Company"}</span>
-    </Text>
-    <Separator className="mt-4" />
+    </BigHeadingText>
+    <Separator className={`${inView ? "" : "opacity-80 scale-x-0"}`} />
   </div>
 )
 
-const TextSection = () => (
-  <div>
+const TextSection = ({ observe, inView }: any) => (
+  <div ref={observe}>
     <div className="space-y-4">
-      <LogoTitle />
-      <Text variant={"bodyBig"}>
+      <LogoTitle inView={inView} />
+      <DescriptionText
+        variant={"bodyBig"}
+        className={`${inView ? "" : "opacity-0"}`}
+      >
         {
-          "This is a private bus company that takes you from point A to point B within continental Europe."
+          "This is a private bus company that takes you from point A to point B within Europe."
         }
-      </Text>
-      <Button>{"Create Account"}</Button>
+      </DescriptionText>
+      <ButtonContainer className={`${inView ? "" : "opacity-0"}`}>
+        <Button>{"Create Account"}</Button>
+      </ButtonContainer>
     </div>
     <div className="mt-32">
-      <HeroFeatures />
+      <HeroFeatures inView={inView} />
     </div>
   </div>
 )
@@ -42,22 +57,55 @@ const GradientBackground = () => (
   </div>
 )
 
-const Container = tw.div`mt-16 flex justify-between items-center gap-x-8`
-const Column = tw.div`w-1/2`
+const BookingFormWrapper = tw.div`transform transition duration-1000`
+
+const WrappedBookingForm = ({
+  observe,
+  inView,
+}: {
+  observe?: any
+  inView?: boolean
+}) => (
+  <BookingFormWrapper
+    ref={observe}
+    className={`${inView ? "" : "translate-y-5 opacity-0"}`}
+  >
+    <BookingForm />
+  </BookingFormWrapper>
+)
+
+const ImageContainer = tw.div`rounded-3xl shadow-lg overflow-hidden transition ease-in-out delay-500 duration-[2000ms]`
+const MainImage = tw.img`w-full h-full object-cover transition transform ease-out duration-[14s]`
+
+const HeroImage = ({ observe, inView }: any) => (
+  <ImageContainer ref={observe} className={`${inView ? "" : "opacity-0"}`}>
+    <MainImage
+      className={`${inView ? "" : "scale-[1.15] rotate-2 translate-y-4"}`}
+      src="https://source.unsplash.com/T5jzpRTVF1U"
+      alt="Bus"
+    />
+  </ImageContainer>
+)
 
 export const HeroSection = () => (
   <>
     <GradientBackground />
     <Section className="h-[900px]">
       <div className="mt-16 flex justify-center">
-        <BookingForm />
+        <InView unobserveOnEnter>
+          <WrappedBookingForm />
+        </InView>
       </div>
       <Container>
         <Column>
-          <TextSection />
+          <InView unobserveOnEnter>
+            <TextSection />
+          </InView>
         </Column>
         <Column>
-          <MainImage src="https://source.unsplash.com/T5jzpRTVF1U" alt="Bus" />
+          <InView unobserveOnEnter>
+            <HeroImage />
+          </InView>
         </Column>
       </Container>
     </Section>

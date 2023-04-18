@@ -1,6 +1,13 @@
 import React from "react"
 import { Layout, Seo } from "components"
-import { HeroSection, MidSection, StatsSection } from "sections"
+import {
+  BottomHeroSection,
+  FaqSection,
+  HeroSection,
+  MidSection,
+  ReviewsSection,
+  StatsSection,
+} from "sections"
 import { GiSlashedShield } from "@react-icons/all-files/gi/GiSlashedShield"
 import { GiAlarmClock } from "@react-icons/all-files/gi/GiAlarmClock"
 import { GiMoneyStack } from "@react-icons/all-files/gi/GiMoneyStack"
@@ -98,6 +105,9 @@ const IndexPage = () => (
     <MidSection section={sections.features} />
     <MidSection section={sections.features2} />
     <StatsSection />
+    <ReviewsSection />
+    <FaqSection />
+    <BottomHeroSection />
   </Layout>
 )
 

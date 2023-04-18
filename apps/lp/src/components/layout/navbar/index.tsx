@@ -1,11 +1,10 @@
-import React, { useState } from "react"
+import React from "react"
 import tw from "tailwind-styled-components"
 import { Text } from "components"
 import { Link } from "gatsby"
 import { FaBus } from "@react-icons/all-files/fa/FaBus"
-import { WiMoonAltWaningCrescent4 } from "@react-icons/all-files/wi/WiMoonAltWaningCrescent4"
-import { WiDaySunny } from "@react-icons/all-files/wi/WiDaySunny"
 import { InView } from "react-cool-inview"
+import { DarkModeSwitch } from "./dark-mode-switch"
 
 const Container = tw.div`fixed left-0 right-0 top-0 z-20 transition duration-[2000ms] delay-500`
 const Box = tw.div`bg-black bg-opacity-50 w-full backdrop-filter backdrop-blur`
@@ -60,51 +59,34 @@ const NavItem = ({ item }: { item: NavItemType }) => (
   </Link>
 )
 
-const DarkModeSwitch = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false)
-  const Icon = isDarkMode ? WiDaySunny : WiMoonAltWaningCrescent4
-
-  const onClick = () => {
-    setIsDarkMode(i => !i)
-  }
-
-  return (
-    <button onClick={onClick} className="text-white px-2">
-      <Icon className="w-6 h-6 text-current" />
-    </button>
-  )
-}
-
-export const NavbarCore = ({ observe, inView }: any) => {
-  return (
-    <Container ref={observe} className={`${inView ? "" : "opacity-0"}`}>
-      <Box>
-        <WidthContainer>
-          <NavItemsContainer>
-            <div className="flex justify-center items-center">
-              <Link to="/">
-                <div className="px-2">
-                  <BusLogo className="w-6 h-6" />
-                </div>
-              </Link>{" "}
-            </div>
-            {navItems.left.map(item => (
-              <NavItem key={item.title} item={item} />
-            ))}
-          </NavItemsContainer>
-          <NavItemsContainer>
-            <div className="flex justify-center items-center">
-              <DarkModeSwitch />
-            </div>
-            {navItems.right.map(item => (
-              <NavItem key={item.title} item={item} />
-            ))}
-          </NavItemsContainer>
-        </WidthContainer>
-      </Box>
-    </Container>
-  )
-}
+export const NavbarCore = ({ observe, inView }: any) => (
+  <Container ref={observe} className={`${inView ? "" : "opacity-0"}`}>
+    <Box>
+      <WidthContainer>
+        <NavItemsContainer>
+          <div className="flex justify-center items-center">
+            <Link to="/">
+              <div className="px-2">
+                <BusLogo className="w-6 h-6" />
+              </div>
+            </Link>{" "}
+          </div>
+          {navItems.left.map(item => (
+            <NavItem key={item.title} item={item} />
+          ))}
+        </NavItemsContainer>
+        <NavItemsContainer>
+          <div className="flex justify-center items-center">
+            <DarkModeSwitch />
+          </div>
+          {navItems.right.map(item => (
+            <NavItem key={item.title} item={item} />
+          ))}
+        </NavItemsContainer>
+      </WidthContainer>
+    </Box>
+  </Container>
+)
 
 export const Navbar = () => (
   <InView>

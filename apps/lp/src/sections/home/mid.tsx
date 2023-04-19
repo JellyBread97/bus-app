@@ -25,10 +25,16 @@ const TopPart = ({ section, observe, inView }: any) => (
   </TopPartContainer>
 )
 
-const FeatureItem = ({ feature }) => (
+const FeatureItem = ({ feature, color }) => (
   <div className="flex space-x-4">
     <div>
-      {<feature.icon className="w-8 h-8 dark:text-white text-gray-800" />}
+      {
+        <feature.icon
+          className={`w-8 h-8 ${
+            color === "green" ? "text-green-500" : "text-blue-500"
+          }`}
+        />
+      }
     </div>
     <div>
       <Text variant={"button"}>{feature.title}</Text>
@@ -69,7 +75,10 @@ const Content = ({ section, observe, inView }: any) => (
               }`}
               style={{ transitionDelay: 500 + index * 250 + "ms" }}
             >
-              <FeatureItem feature={feature} />
+              <FeatureItem
+                feature={feature}
+                color={index % 2 ? "blue" : "green"}
+              />
             </div>
           )
         )}

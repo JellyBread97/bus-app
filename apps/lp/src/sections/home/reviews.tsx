@@ -74,7 +74,9 @@ const ReviewItem = ({ item }: { item: ReviewType }) => {
             <Text variant={"subtitle"}>{item.timeAgo}</Text>
           </div>
         </div>
-        <Text className="mt-4 italic">{quotedContent}</Text>
+        <Text color={"gray-light"} className="mt-4 italic">
+          {quotedContent}
+        </Text>
         <div className="absolute top-4 right-4">
           <IoMdQuote className="fill-green-500" />
         </div>

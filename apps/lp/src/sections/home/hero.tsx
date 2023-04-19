@@ -40,6 +40,7 @@ const TextSection = ({ inView }: any) => (
       <LogoTitle inView={inView} />
       <DescriptionText
         variant={"bodyBig"}
+        color={"gray-light"}
         className={`${inView ? "" : "opacity-0"}`}
       >
         {

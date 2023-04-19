@@ -13,7 +13,7 @@ export const BottomHeroSectionCore = ({ observe, inView }: any) => (
         inView ? "" : "opacity-0"
       }`}
     >
-      <Text>
+      <Text color={"gray-light"}>
         {
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non voluptatibus asperiores saepe blanditiis iusto! Ipsa dolorum suscipit minima nemo."
         }

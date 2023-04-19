@@ -54,7 +54,9 @@ const navItems: {
 const NavItem = ({ item }: { item: NavItemType }) => (
   <Link to={item.link}>
     <NavItemContainer>
-      <Text color="white">{item.title}</Text>
+      <Text variant={"subtitle"} className="uppercase" color="white">
+        {item.title}
+      </Text>
     </NavItemContainer>
   </Link>
 )

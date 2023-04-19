@@ -6,7 +6,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "@react-icons/all-files": "^4.1.0",
-    "gatsby": "^5.8.1",
+    "gatsby": "^5.9.0",
     "gatsby-plugin-image": "^3.8.0",
     "gatsby-plugin-manifest": "^5.8.0",
     "gatsby-plugin-postcss": "^6.8.0",

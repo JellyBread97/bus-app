@@ -9,5 +9,8 @@
   "devDependencies": {
     "lerna": "^6.6.1",
     "tailwind-styled-components": "^2.2.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }

@@ -1,3 +1,0 @@
-[build]
-  command = "cd apps/lp && lerna bootstrap && yarn build"
-  node_version = "18.16.0"

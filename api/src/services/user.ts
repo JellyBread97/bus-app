@@ -17,26 +17,15 @@ const getById = async (id: number): Promise<User> => {
   return User.findById(id)
 }
 
-/**
- * Get user by email
- * @param {string} email
- * @returns {Promise<User>}
- */
 const getByEmail = async (email: string): Promise<User> => {
   return User.findOne({ email })
 }
 
-/**
- * Update user by id
- * @param {number} userId
- * @param {Object} updateBody
- * @returns {Promise<User>}
- */
 const updateById = async (
   userId: number,
   updateBody: object
 ): Promise<User> => {
-  const user = await getUserById(userId)
+  const user = await getById(userId)
   if (!user) {
     throw new ApiError(httpStatus.NOT_FOUND, "User not found")
   }
@@ -48,13 +37,8 @@ const updateById = async (
   return user
 }
 
-/**
- * Delete user by id
- * @param {number} userId
- * @returns {Promise<User>}
- */
 const deleteById = async (userId: number): Promise<User> => {
-  const user = await getUserById(userId)
+  const user = await getById(userId)
   if (!user) {
     throw new ApiError(httpStatus.NOT_FOUND, "User not found")
   }

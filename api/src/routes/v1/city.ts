@@ -3,9 +3,9 @@ import { validate } from "../../middlewares"
 import { cityController } from "../../controllers"
 import { cityValidation } from "../../validations"
 
-export const cityRouter = express.Router()
+export const cityRoute = express.Router()
 
-cityRouter.get(
+cityRoute.get(
   "/search",
   validate(cityValidation.getMany),
   cityController.getMany

@@ -1,7 +1,7 @@
 import express from "express"
 // import authRoute from "./auth.route"
 // import userRoute from "./user.route"
-import { cityRouter } from "./city"
+import { cityRoute } from "./city"
 // import { docsRouter } from "./docs"
 import { env } from "../../config/env"
 
@@ -18,7 +18,7 @@ const defaultRoutes = [
   // },
   {
     path: "/city",
-    route: cityRouter,
+    route: cityRoute,
   },
 ]
 

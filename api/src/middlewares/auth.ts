@@ -1,7 +1,7 @@
 import passport from "passport"
 import httpStatus from "http-status"
-import ApiError from "../utils/ApiError"
-import { roleRights } from "../config/roles"
+import { ApiError } from "../utils"
+import { roleRights } from "../config"
 
 const verifyCallback =
   (req, resolve, reject, requiredRights) => async (err, user, info) => {
@@ -25,7 +25,7 @@ const verifyCallback =
     resolve()
   }
 
-const auth =
+export const auth =
   (...requiredRights) =>
   async (req, res, next) => {
     return new Promise((resolve, reject) => {
@@ -38,5 +38,3 @@ const auth =
       .then(() => next())
       .catch(err => next(err))
   }
-
-module.exports = auth

@@ -2,7 +2,7 @@ import express from "express"
 import authRoute from "./auth.route"
 import userRoute from "./user.route"
 import docsRoute from "./docs.route"
-import config from "../../config/config"
+import { env } from "../../config/env"
 
 const router = express.Router()
 
@@ -30,10 +30,10 @@ defaultRoutes.forEach(route => {
 })
 
 /* istanbul ignore next */
-if (config.env === "development") {
+if (env.env === "development") {
   devRoutes.forEach(route => {
     router.use(route.path, route.route)
   })
 }
 
-module.exports = router
+export { router }

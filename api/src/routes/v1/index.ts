@@ -1,28 +1,33 @@
 import express from "express"
-import authRoute from "./auth.route"
-import userRoute from "./user.route"
-import docsRoute from "./docs.route"
+// import authRoute from "./auth.route"
+// import userRoute from "./user.route"
+import { cityRouter } from "./city"
+// import { docsRouter } from "./docs"
 import { env } from "../../config/env"
 
 const router = express.Router()
 
 const defaultRoutes = [
+  // {
+  //   path: "/auth",
+  //   route: authRoute,
+  // },
+  // {
+  //   path: "/users",
+  //   route: userRoute,
+  // },
   {
-    path: "/auth",
-    route: authRoute,
-  },
-  {
-    path: "/users",
-    route: userRoute,
+    path: "/city",
+    route: cityRouter,
   },
 ]
 
 const devRoutes = [
   // routes available only in development mode
-  {
-    path: "/docs",
-    route: docsRoute,
-  },
+  // {
+  //   path: "/docs",
+  //   route: docsRouter,
+  // },
 ]
 
 defaultRoutes.forEach(route => {

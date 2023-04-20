@@ -1,39 +1,19 @@
 import httpStatus from "http-status"
-const { User } = require("../models")
 import { ApiError } from "../utils"
 
-/**
- * Create a user
- * @param {Object} userBody
- * @returns {Promise<User>}
- */
-const create = async userBody => {
+const create = async (userBody: object): Promise<User> => {
   if (await User.isEmailTaken(userBody.email)) {
     throw new ApiError(httpStatus.BAD_REQUEST, "Email already taken")
   }
   return User.create(userBody)
 }
 
-/**
- * Query for users
- * @param {Object} filter - Mongo filter
- * @param {Object} options - Query options
- * @param {string} [options.sortBy] - Sort option in the format: sortField:(desc|asc)
- * @param {number} [options.limit] - Maximum number of results per page (default = 10)
- * @param {number} [options.page] - Current page (default = 1)
- * @returns {Promise<QueryResult>}
- */
-const query = async (filter, options) => {
+const query = async (filter: object, options: any): Promise<QueryResult> => {
   const users = await User.paginate(filter, options)
   return users
 }
 
-/**
- * Get user by id
- * @param {ObjectId} id
- * @returns {Promise<User>}
- */
-const getById = async id => {
+const getById = async (id: number): Promise<User> => {
   return User.findById(id)
 }
 
@@ -42,17 +22,20 @@ const getById = async id => {
  * @param {string} email
  * @returns {Promise<User>}
  */
-const getByEmail = async email => {
+const getByEmail = async (email: string): Promise<User> => {
   return User.findOne({ email })
 }
 
 /**
  * Update user by id
- * @param {ObjectId} userId
+ * @param {number} userId
  * @param {Object} updateBody
  * @returns {Promise<User>}
  */
-const updateById = async (userId, updateBody) => {
+const updateById = async (
+  userId: number,
+  updateBody: object
+): Promise<User> => {
   const user = await getUserById(userId)
   if (!user) {
     throw new ApiError(httpStatus.NOT_FOUND, "User not found")
@@ -67,10 +50,10 @@ const updateById = async (userId, updateBody) => {
 
 /**
  * Delete user by id
- * @param {ObjectId} userId
+ * @param {number} userId
  * @returns {Promise<User>}
  */
-const deleteById = async userId => {
+const deleteById = async (userId: number): Promise<User> => {
   const user = await getUserById(userId)
   if (!user) {
     throw new ApiError(httpStatus.NOT_FOUND, "User not found")

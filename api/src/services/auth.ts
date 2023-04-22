@@ -1,4 +1,4 @@
-import httpStatus from "http-status"
+const httpStatus = require("http-status")
 import { tokenService } from "./token"
 import { userService } from "./user"
 // import Token from "../models/token.model"

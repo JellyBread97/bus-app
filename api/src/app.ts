@@ -8,7 +8,7 @@ import httpStatus from "http-status"
 import {
   env,
   morganConfig,
-  // passportConfig
+  //  passportConfig
 } from "./config"
 import { authLimiter } from "./middlewares/rate-limiter"
 import { router } from "./routes/v1"

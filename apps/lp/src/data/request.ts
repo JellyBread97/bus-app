@@ -9,12 +9,12 @@ export const request = async ({ url, method = "GET", params }) => {
     await fetch(endpoint, {
       method,
     })
+      .then(async response => {
+        const result = await response.json()
+        resolve(result)
+      })
+      .catch(error => {
+        // catch error
+      })
   })
-    .then(async response => {
-      const result = await response.json()
-      resolve(result)
-    })
-    .catch(error => {
-      // catch error
-    })
 }

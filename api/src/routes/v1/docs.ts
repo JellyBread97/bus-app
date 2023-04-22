@@ -1,4 +1,4 @@
-import express from "express"
+const express = require("express")
 import swaggerJsdoc from "swagger-jsdoc"
 import swaggerUi from "swagger-ui-express"
 import { swaggerDef } from "../../docs/swaggerDef"

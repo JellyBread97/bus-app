@@ -1,5 +1,5 @@
 import httpStatus from "http-status"
-import { ApiError, catchAsync, pick } from "../utils"
+import { catchAsync, ApiError, pick } from "../utils"
 import { userService } from "../services"
 
 const createUser = catchAsync(async (req, res) => {

@@ -1,31 +1,32 @@
 import { PrismaClient } from "@prisma/client"
 const prisma = new PrismaClient()
+
 async function main() {
   const city = await prisma.city.createMany({
     data: [
       {
-        name: "London",
-        slug: "london",
+        name: "New York",
+        slug: "new-york",
       },
       {
-        name: "Prague",
-        slug: "prague",
+        name: "Los Angeles",
+        slug: "los-angeles",
       },
       {
-        name: "Warsaw",
-        slug: "warsaw",
+        name: "Chicago",
+        slug: "chicago",
       },
     ],
   })
 
   console.log({ city })
 }
+
 main()
-  .then(async () => {
-    await prisma.$disconnect()
-  })
-  .catch(async e => {
+  .catch(e => {
     console.error(e)
-    await prisma.$disconnect()
     process.exit(1)
+  })
+  .finally(async () => {
+    await prisma.$disconnect()
   })

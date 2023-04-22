@@ -3,7 +3,7 @@ import express from "express"
 // import userRoute from "./user.route"
 import { cityRoute } from "./city"
 // import { docsRouter } from "./docs"
-import { env } from "../../config/env"
+import { env } from "../../config"
 
 const router = express.Router()
 

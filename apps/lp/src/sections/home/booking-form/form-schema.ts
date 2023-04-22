@@ -1,6 +1,6 @@
+import { data } from "data"
 import { FormSchema, LocationOption } from "react-booking-form"
 import { cities } from "./cities"
-import { data } from "data"
 
 // This is mocking a call to API that would return location search results
 // whenever user types into the location input field.

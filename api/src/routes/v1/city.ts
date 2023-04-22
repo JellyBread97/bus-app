@@ -1,4 +1,4 @@
-import express from "express"
+const express = require("express")
 import { validate } from "../../middlewares"
 import { cityController } from "../../controllers"
 import { cityValidation } from "../../validations"

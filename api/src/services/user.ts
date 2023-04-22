@@ -8,7 +8,7 @@ const create = async (userBody: object): Promise<User> => {
   return User.create(userBody)
 }
 
-const query = async (filter: object, options: any): Promise<QueryResult> => {
+const query = async (filter: object, options: any) => {
   const users = await User.paginate(filter, options)
   return users
 }

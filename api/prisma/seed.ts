@@ -1,5 +1,5 @@
 import { PrismaClient } from "@prisma/client"
-import { cities } from "./seed-data/cities"
+import { cities } from "./seed-data"
 const prisma = new PrismaClient()
 
 async function main() {

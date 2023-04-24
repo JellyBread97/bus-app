@@ -6,6 +6,13 @@ const getMany = {
   }),
 }
 
+const getSome = {
+  query: Joi.object().keys({
+    cities: Joi.string(),
+  }),
+}
+
 export const cityValidation = {
   getMany,
+  getSome,
 }

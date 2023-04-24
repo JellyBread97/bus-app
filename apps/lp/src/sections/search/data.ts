@@ -36,40 +36,4 @@ export const busses = [
   },
 ]
 
-export const formattedCities = cities.map(city => ({
-  slug: city.toLowerCase(),
-  name: city,
-}))
-
-export const trips: TripType[] = [
-  {
-    id: 1,
-    cityFrom: formattedCities[1],
-    cityTo: formattedCities[2],
-    departure: new Date(),
-    arrival: new Date(),
-    distance: 702,
-    price: 3040,
-    bus: busses[0],
-  },
-  {
-    id: 2,
-    cityFrom: formattedCities[1],
-    cityTo: formattedCities[2],
-    departure: new Date(),
-    arrival: new Date(),
-    distance: 702,
-    price: 2850,
-    bus: busses[0],
-  },
-  {
-    id: 3,
-    cityFrom: formattedCities[1],
-    cityTo: formattedCities[2],
-    departure: new Date(),
-    arrival: new Date(),
-    distance: 702,
-    price: 3070,
-    bus: busses[0],
-  },
-]
+export const trips: TripType[] = []

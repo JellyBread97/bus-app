@@ -40,7 +40,7 @@ export const SearchSection = () => {
         infants: +(params.get("guests-infants") || 0),
       },
     })
-  })
+  }, [])
 
   if (!requestedTrip) return null
 

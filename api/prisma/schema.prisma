@@ -39,6 +39,7 @@ model Bus {
   id        Int      @id @default(autoincrement())
   name      String
   trips     Trip[]
+  seats     Int
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }

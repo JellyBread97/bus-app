@@ -1,7 +1,7 @@
 import moment from "moment"
 
 const days = 7
-const tripsPerCityPerDay = 2
+const tripsPerCityPerDay = 3
 
 const getFloorRandom = (min = 0, max: number) =>
   Math.floor(min + Math.random() * (max - min))

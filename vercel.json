@@ -1,6 +1,0 @@
-{
-  "routes": [
-    { "src": "/api/(.*)", "dest": "api/$1" },
-    { "src": "/apps/lp/(.*)", "dest": "/apps/lp/$1" }
-  ]
-}
